@@ -42,25 +42,25 @@ void selectMove (char c) {
 
 void compareMoves(char uc, char cc) {
 	if (uc == 'r' && cc == 'p') {
-        printf("\nPaper beats Rock. You Lose!");
+        printf("\nPaper beats Rock. You Lose!\n");
     }
     else if (uc == 'p' && cc == 's') {
-        printf("\nScissors beats Paper. You Lose!");
+        printf("\nScissors beats Paper. You Lose!\n");
     }
     else if (uc == 's' && cc == 'r') {
-        printf("\nRock beats Scissors. You Lose!");
+        printf("\nRock beats Scissors. You Lose!\n");
     }
     
 	else if (uc == 'r' && cc == 's') {
-        printf("\nRock beats Scissors. You Win!");     
+        printf("\nRock beats Scissors. You Win!\n");     
     }
     else if (uc == 'p' && cc == 'r') {
-        printf("\nPaper beats Rock. You Win!");       
+        printf("\nPaper beats Rock. You Win!\n");       
     }
     else if (uc == 's' && cc == 'p') {
-        printf("\nScissors beats Paper. You Win!");  
+        printf("\nScissors beats Paper. You Win!\n");  
     }
     else{
-        printf("\nIt's a Tie. Try again");
+        printf("\nIt's a Tie. Try again\n");
     }
 }
