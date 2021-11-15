@@ -11,3 +11,4 @@ progA.exe: progA.o
 
 progA.o: progA.c
 	gcc -c progA.c -o progA.o
+	
