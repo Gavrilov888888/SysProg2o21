@@ -11,3 +11,4 @@ B.o: B.c
 
 B.exe: B.o
 	gcc B.o -o B.exe
+	
