@@ -5,3 +5,4 @@ lab5.exe: lab5.o
 
 lab5.o: lab5.c
 	gcc -c lab5.c -o lab5.o
+	
