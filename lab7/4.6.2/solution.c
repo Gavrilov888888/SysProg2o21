@@ -1,71 +1,50 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/time.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include <poll.h>
 #include <fcntl.h>
+#include <stdio.h>
+#include <unistd.h>
 
-#define BUF_SIZE 100
 
-int read_chnl(int fd, char* buf, size_t size)
+enum { PIPES_COUNT = 2 }; 
+
+int main(int argc, char *argv[])
 {
-    int num_read_bytes = read(fd, buf, size - 1);
-    buf[num_read_bytes] = 0;
-    return num_read_bytes;
-}
+    const char* const pipeNames[PIPES_COUNT] = {"in1", "in2"};
+    struct pollfd fds[PIPES_COUNT];
+    int openCount = 0;
+    int index;
 
-int isConnect2fifo(int* read_res_buf, size_t size) 
-{
-    int ret = 0;
-    int i = 0;
-    for(i = 0; i < size; ++i) {
-        ret |= read_res_buf[i];
-    }
-    return ret;
-}
-
-int main()
-{
-    int fd[2];
-    if(-1 == (fd[0] = open("in1", O_RDONLY|O_NONBLOCK))) {
-        perror("Open: in1");
-        return 1;
-    }
-    if(-1 == (fd[1] = open("in2", O_RDONLY|O_NONBLOCK))) {
-        perror("Open: in2");
-        return 1;
-    }
-
-    fd_set readfds, tmpfds;
-    FD_ZERO(&readfds);
-    FD_ZERO(&tmpfds);
-    FD_SET(fd[0], &readfds);
-    FD_SET(fd[1], &readfds);
-
-    int read_res[2] = {0, 0};
-    int total = 0;
-    char buf[BUF_SIZE];
-
-    do {
-        int i = 0;
-        tmpfds = readfds;
-        if(-1 == select(fd[1]+1, &tmpfds, NULL, NULL, NULL)) {
-            perror("select");
-            return 2;
+    for (index = 0; index < PIPES_COUNT; index++)
+    {
+        fds[index].events = POLLIN;
+        fds[index].fd = open(pipeNames[index], O_RDONLY | O_NONBLOCK);      
+        if (fds[index].fd >= 0)
+        {
+            openCount++;
         }
-        for(i = 0; i < 2; ++i) {
-            if(FD_ISSET(fd[i], &tmpfds)) {
-                read_res[i] = read_chnl(fd[i], buf, BUF_SIZE);
-                if(read_res[i] != 0) {
-                    total += atoi(buf);
-                } else {
-                    FD_CLR(fd[i], &readfds);
-                }
+    }
+
+    int sum = 0;
+    char chr = 0;    
+    while((openCount > 0) && (poll(fds, PIPES_COUNT, -1) > 0))
+    {      
+        for (index = 0; index < PIPES_COUNT; index++)
+        {
+            if (fds[index].revents & POLLIN) 
+            {
+                read(fds[index].fd, &chr, sizeof(chr));
+                sum += chr - '0';
             }
-        }
-    } while(isConnect2fifo(read_res, 2));
-    printf("%d\n", total);
-    fflush(stdout);
-
+            else if (fds[index].revents != 0)
+            {
+                close(fds[index].fd);
+                fds[index].fd = -1;
+                openCount--;
+            }          
+        }            
+    }
+    printf("%d\n", sum);
     return 0;
-}
+
+} 
+
+

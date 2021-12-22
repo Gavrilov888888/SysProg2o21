@@ -1,34 +1,22 @@
-#include <signal.h>
 #include <stdio.h>
 #include <unistd.h>
-#include <stdbool.h>
+#include <stdlib.h>
+#include <signal.h>
 
+int main() {
+    int pid = fork();
 
-sig_atomic_t Exit = 0;
+    if (!pid) {
+        signal(SIGURG, exit);
+        setsid();
+        chdir("/");
 
+        while (4 > pid)
+            close(pid++);
 
-void Handler(int sigNum)
-{
-    Exit = 1; 
-}
-
-
-int main() 
-{
-    if(daemon(false, true) == 0)
-    {
-        printf("%d\n", getpid());
-
-        fclose(stdin);
-        fclose(stdout);
-        fclose(stderr);
-
-        signal(SIGURG, Handler);
-
-        while(Exit == 0)
-        {
-            sleep(100);
-        }
+        while (1);
     }
-    return 0;
+
+    return printf("%d\n", pid) & 0;
+
 }
