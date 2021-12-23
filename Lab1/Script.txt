@@ -1,0 +1,2 @@
+$ find /e/lab2_Cherednyk -type f -name "S*"
+/e/lab2_Cherednyk/Search file.txt

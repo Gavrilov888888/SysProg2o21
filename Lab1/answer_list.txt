@@ -1,0 +1,58 @@
+total 13995
+drwxr-xr-x 1 User 197121       0 Oct 22 02:47 ./
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 ../
+drwxr-xr-x 1 User 197121       0 Feb 25  2020 .IdeaIC2019.3/
+drwxr-xr-x 1 User 197121       0 Mar  3  2020 .android/
+-rw-r--r-- 1 User 197121    4277 Oct 22 11:46 .bash_history
+drwxr-xr-x 1 User 197121       0 May 31 22:03 .btfs/
+drwxr-xr-x 1 User 197121       0 Jan  2  2020 .config/
+drwxr-xr-x 1 User 197121       0 Sep  2 02:32 .dotnet/
+-rw-r--r-- 1 User 197121     220 Oct 22 00:31 .gitconfig
+drwxr-xr-x 1 User 197121       0 Nov 19  2020 .jdks/
+-rw-r--r-- 1 User 197121      20 Oct 22 02:47 .lesshst
+drwxr-xr-x 1 User 197121       0 Jul 27 13:49 .librarymanager/
+drwxr-xr-x 1 User 197121       0 Feb 13  2021 .nuget/
+drwxr-xr-x 1 User 197121       0 Feb 19  2020 .p2/
+drwxr-xr-x 1 User 197121       0 Oct 22 01:19 .ssh/
+drwxr-xr-x 1 User 197121       0 Jul 28 14:30 .templateengine/
+drwxr-xr-x 1 User 197121       0 Feb 19  2020 .tooling/
+drwxr-xr-x 1 User 197121       0 Aug  6 13:50 .vscode/
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 3D Objects/
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 AppData/
+lrwxrwxrwx 1 User 197121      29 Sep  5  2020 Application Data -> /c/Users/User/AppData/Roaming/
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 Contacts/
+lrwxrwxrwx 1 User 197121      57 Sep  5  2020 Cookies -> /c/Users/User/AppData/Local/Microsoft/Windows/INetCookies/
+drwxr-xr-x 1 User 197121       0 Oct 22 11:45 Desktop/
+drwxr-xr-x 1 User 197121       0 Oct 20 17:37 Documents/
+drwxr-xr-x 1 User 197121       0 Oct  6 15:17 Downloads/
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 Favorites/
+drwxr-xr-x 1 User 197121       0 Oct 22 11:09 IntelGraphicsProfiles/
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 Links/
+lrwxrwxrwx 1 User 197121      27 Sep  5  2020 Local Settings -> /c/Users/User/AppData/Local/
+drwxr-xr-x 1 User 197121       0 Nov 30  2020 MATLAB/
+drwxr-xr-x 1 User 197121       0 Sep 16  2019 MicrosoftEdgeBackups/
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 Music/
+-rw-r--r-- 1 User 197121 9961472 Oct 22 10:31 NTUSER.DAT
+-rw-r--r-- 1 User 197121   65536 Sep  5  2020 NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf
+-rw-r--r-- 1 User 197121  524288 Sep  5  2020 NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms
+-rw-r--r-- 1 User 197121  524288 Sep  5  2020 NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms
+lrwxrwxrwx 1 User 197121      65 Sep  5  2020 NetHood -> /c/Users/User/AppData/Roaming/Microsoft/Windows/Network Shortcuts/
+drwxr-xr-x 1 User 197121       0 Aug  8 21:41 OneDrive/
+drwxr-xr-x 1 User 197121       0 May 30 23:30 Pictures/
+lrwxrwxrwx 1 User 197121      65 Sep  5  2020 PrintHood -> /c/Users/User/AppData/Roaming/Microsoft/Windows/Printer Shortcuts/
+lrwxrwxrwx 1 User 197121      54 Sep  5  2020 Recent -> /c/Users/User/AppData/Roaming/Microsoft/Windows/Recent/
+drwxr-xr-x 1 User 197121       0 Apr  9  2021 Saved Games/
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 Searches/
+lrwxrwxrwx 1 User 197121      54 Sep  5  2020 SendTo -> /c/Users/User/AppData/Roaming/Microsoft/Windows/SendTo/
+drwxr-xr-x 1 User 197121       0 Jun  1 22:53 Tracing/
+drwxr-xr-x 1 User 197121       0 Sep  6  2020 Videos/
+drwxr-xr-x 1 User 197121       0 Oct  7  2019 ansel/
+drwxr-xr-x 1 User 197121       0 Feb 19  2020 eclipse/
+-rw-r--r-- 1 User 197121 2392064 Sep  5  2020 ntuser.dat.LOG1
+-rw-r--r-- 1 User 197121  753664 Sep  5  2020 ntuser.dat.LOG2
+-rw-r--r-- 1 User 197121      20 Sep  6  2020 ntuser.ini
+drwxr-xr-x 1 User 197121       0 Feb  8  2021 obj/
+drwxr-xr-x 1 User 197121       0 Sep 30  2019 source/
+lrwxrwxrwx 1 User 197121      23 Sep  5  2020 Мои документы -> /c/Users/User/Documents/
+lrwxrwxrwx 1 User 197121      57 Sep  5  2020 Шаблоны -> /c/Users/User/AppData/Roaming/Microsoft/Windows/Templates/
+lrwxrwxrwx 1 User 197121      58 Sep  5  2020 главное меню -> /c/Users/User/AppData/Roaming/Microsoft/Windows/Start Menu/
