@@ -1,38 +1,22 @@
-#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
-
-int user1_sig = 0;
-int user2_sig = 0;
+#include <signal.h>
 
 
-void user_signal_handler(int signalno) {
-    switch (signalno) {
-        case SIGUSR1:
-            user1_sig++;
-            break;
-        case SIGUSR2:
-            user2_sig++;
-            break;
-        default: {
-            printf("%d %d\n", user1_sig, user2_sig);
-            exit(0);
-        }
-
-    }
+void sighandler(int sig) {
+	static int sum1, sum2;
+	sum1 += (sig == SIGUSR1);
+	sum2 += (sig == SIGUSR2);
+	if (sig == SIGTERM) {
+		printf("%d %d\n", sum1, sum2);
+		exit(0);
+	}
 }
 
+int main() {
+	signal(SIGUSR1, sighandler);
+	signal(SIGUSR2, sighandler);
+	signal(SIGTERM, sighandler);
+	while(1);
 
-int main(int argc, char **argv) {
-
-    signal(SIGUSR1, user_signal_handler);
-    signal(SIGUSR2, user_signal_handler);
-    signal(SIGTERM, user_signal_handler);
-
-    while(1) {
-        usleep(50000);
-    }
-
-    return 0;
 }

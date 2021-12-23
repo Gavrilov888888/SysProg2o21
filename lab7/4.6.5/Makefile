@@ -1,5 +1,5 @@
-all: solution
+solution: solution.o
+	gcc -g -o solution solution.o -ldl
 
-solution: solution.c
-	gcc $< -Wall -Wextra -pedantic -o $@
-
+solution.o: solution.c
+	gcc -Wall -g -c solution.c

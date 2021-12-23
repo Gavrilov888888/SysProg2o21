@@ -1,3 +1,2 @@
-all:
-	gcc solution.c -o solution
-
+exe:
+	gcc -o solution solution.c

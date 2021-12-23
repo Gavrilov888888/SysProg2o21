@@ -1,8 +1,5 @@
-all: build
+solution: solution.o
+	gcc -g -o solution solution.o -ldl
 
-build: solution.c
-	gcc -o solution solution.c
-
-clean:
-	rm solution
-
+solution.o: solution.c
+	gcc -Wall -g -c solution.c
